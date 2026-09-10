@@ -1,0 +1,301 @@
+* {
+    size: 100%;
+    font-family: Cascadia Code, monospace;
+}
+body {
+    margin-top: 50px; /* 和 top‑bar height 保持一样 */
+}
+div {
+    font-family: Cascadia Code, monospace;
+}
+.topbar {
+    background-color: rgba(247, 247, 247, 0.75);
+    -webkit-backdrop-filter: blur(10px);
+    color: rgb(0, 0, 0);
+    backdrop-filter: blur(10px);
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 2147483647;
+    /* 修复：开启topbar弹性布局，解决按钮上下堆叠 */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.topbar_btn {
+    background-color: rgba(247, 247, 247, 0.01);
+    color: rgb(0, 0, 0);
+    height: 50px;
+    border: none;
+    margin: 0;
+    border-radius: 0;
+    width: 96px;
+    cursor: pointer;
+    font-family: Cascadia Code, monospace;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.topbar_btn:hover {
+    background-color: rgba(243, 243, 243, 0.5);
+}
+.topbar_btn:active {
+    background-color: rgba(236, 236, 236, 0.6);
+    color: rgb(0, 0, 0);
+}
+.topbar_btn_home {
+    background-color: rgba(247, 247, 247, 0.01);
+    color: rgb(0, 0, 0);
+    height: 50px;
+    border: none;
+    margin: 0;
+    border-radius: 0;
+    width: 50px;
+    cursor: pointer;
+    font-family: Cascadia Code, monospace;
+    /* 修复：home按钮内部弹性布局，消除img基线导致排版偏移 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topbar_btn_home:hover {
+    background-color: rgb(243, 243, 243);
+}
+.topbar_btn_home:active {
+    background-color: rgb(236, 236, 236);
+    color: rgb(0, 0, 0);
+}
+.search_bar {
+    border: none;
+    border-radius: none;
+    background-color: rgba(234, 234, 234, 0.5);
+    font-family: Cascadia Code, monospace;
+    /* 上下8px，左右12px；左右就是离边框的空隙 */
+    padding: 6.4px 18px;
+    font-size: medium;
+    right: 0px;
+    position: absolute;
+    height: 37.2px;
+    width: 280px;
+}
+.Home_icon {
+    width: 30px;
+    height: 30px;
+}
+.github_btn {
+    -webkit-user-select: none;
+    user-select: none; /* 拖动时禁止选中文本 */
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    border: none;
+    height: 50px;
+    width: 50px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: cursor 0.5s step-end;
+    position: fixed;
+    display: flex;
+    /*你原来所有其他css原样保留*/
+    right: 16px;   /*距离屏幕右侧16px*/
+    bottom: 16px;  /*距离屏幕底部16px*/
+    align-items: center;
+    justify-content: center;
+    z-index: 2147483646;
+}
+.github_btn:hover {
+    background-color: whitesmoke;
+    color: rgb(243, 243, 243);
+    cursor: pointer
+}
+.github_btn:active {
+    cursor: grabbing;
+    background-color: rgb(241, 241, 241);
+    color: rgb(240, 240, 240);
+}
+.Github {
+    -webkit-user-grab: none;
+    user-select: none;
+    -webkit-user-select: none;
+    height: 49px;
+    width: 49px;
+    z-index: 2147483646;
+}
+.search_download {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh; /* ⚠️这一行必须存在！ */
+    flex-direction: column;
+    font-size: large;
+}
+.search_input_download {
+    border: none;
+    border-radius: none;
+    background-color: whitesmoke;
+    height: 45px;
+    width: 450px;
+    font-family: Cascadia Code, monospace;
+    /* 上下8px，左右12px；左右就是离边框的空隙 */
+    padding: 6.4px 18px;
+    font-size: medium;
+}
+.search_input:focus {
+    outline: #aaa;
+}
+.community_ads {
+    width: 100%;
+    height: 760px;
+    top: 0px;
+    background-color: white;
+    display: flex;
+    position: relative;
+    /* overflow: hidden; */
+}
+.community_ads_info {
+    left: 16px;
+    flex-direction: row;
+    font-size: larger;
+    font-weight: bolder;
+    background-color: rgb(255, 101, 209);
+    /* bottom: 0px; */
+    /* position: sticky/fixed; */
+    overflow: hidden;
+    /* position: absolute;
+    bottom: 0;
+    right: 0; */
+}
+.people_img {
+    height: 80vh;
+    width: 99vw;
+    /* height: 100%;
+    width: 100%; */
+    object-fit: cover;
+    object-position: center;
+}
+.main_texts {
+    margin-left: 16px;
+    bottom: 50px;
+    color: white;
+}
+.more_btn {
+    /* top: auto; */
+    right: 36.25678900020px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 40px;
+    width: 82.5px;
+    /* bottom: 50px; */
+    top: calc(100% - 50px - 40px);
+    border: none;
+    border-radius: 0px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.more_btn:hover {
+    background-color: whitesmoke;
+}
+.more_btn:active {
+    background-color: rgb(241, 241, 241);
+}
+.close_community_ads {
+    background: none;
+    border-radius: none;
+    border: none;
+    color: white;
+    font-size: 19px;
+    /* bottom: 87px; */
+    top: calc(100% - 87px);
+    right: 8px;
+    position: absolute;
+    cursor: pointer;
+    /* top: auto; */
+}
+.close_community_ads:hover {
+    color: whitesmoke;
+}
+.close_community_ads:active {
+    color: rgb(241, 241, 241);
+}
+.q-intro_title {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: bolder;
+    font-size: larger;
+}
+.q-intro_main-text {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: large;
+}
+.search_results_download {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 0%;
+}
+.download_q-v1\.1\.1-windows-x64_exe {
+    right: 0px;
+    /* position: relative; */
+    margin: 0px;
+    font-size: large;
+    font-weight: bolder;
+    background-color: rgb(0, 120, 215);
+    color: white;
+    border: none;
+    border-radius: 0px;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+}
+.download_q-v1\.1\.1-windows-x64_exe:hover {
+    background-color: rgb(0, 100, 180);
+}
+.download_q-v1\.1\.1-windows-x64_exe:active {
+    background-color: rgb(0, 80, 150);
+}
+.q-v1\.1\.1-windows-x64_exe {
+    right: 0px;
+    /* position: relative; */
+    margin: 0px;
+    margin-right: 0px;
+    font-size: large;
+    font-weight: bolder;
+    background-color: rgb(248, 248, 248);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 0px;
+    height: 50px;
+    width: 336px;
+    cursor: pointer;
+}
+.q-v1\.1\.1-windows-x64_exe:hover {
+    background-color: rgb(233, 233, 233);
+}
+.q-v1\.1\.1-windows-x64_exe:active {
+    background-color: rgb(200, 200, 200);
+}
+
+
+
+
+
+
+
